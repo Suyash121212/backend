@@ -25,3 +25,11 @@ fs.readFile("./asyncfile.txt","utf-8",(err,result)=>{
     }
 });
 
+const fs1 = require("fs");
+fs.writeFileSync('./suyash.txt','hello I am suyash ! how are you ?');
+
+fs.writeFile('./suyash-async.txt','asynchronously',(err)=>{
+   if(err) throw err;
+   console.log('file written succesfullt')
+
+})
