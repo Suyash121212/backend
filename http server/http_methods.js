@@ -23,6 +23,10 @@ const myserver = http.createServer((req,res)=>{
             if(req.method==="GET")
             res.end("welcome to my server this is the HOME PAGE");
             break;
+
+            case "/contact":
+                res.end("this is a contact page");
+                break;
             case "/about" :
             const username = myurl.query.username;    
             res.end(`This is the about page hi ${username}`);
@@ -45,7 +49,12 @@ const myserver = http.createServer((req,res)=>{
     
 })
 
-const portno = 8000;
-myserver.listen(portno,(err,data)=>{
-    console.log(`server started on http://localhost:${portno}`);
+// const portno = 8000;
+// myserver.listen(portno,(err,data)=>{
+//     console.log(`server started on http://localhost:${portno}`);
+// })
+ 
+myserver.listen(8080,(err,data)=>{
+    console.log(`server is started on http://localhost:8080`);
+    
 })
