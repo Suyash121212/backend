@@ -10,13 +10,16 @@ app.use(express.urlencoded({extended:false}));
 
 app.get('/api/users',(req,res)=>{
     return res.json(users);
+    // return res.send (users); gives same result 
 });
 
 app.get('/users',(req,res)=>{
     // rendering with HTML 
     const html=`<ul> ${users.map((user)=>`<li>${user.first_name} ${user.last_name}</li>`).join('')}</ul>`; 
     res.send(html); 
+
 })
+
 
 // :id -> dynamically id  , gives the specific id user
 // http://localhost:8080/api/users/1
@@ -27,6 +30,7 @@ app.get('/api/users/:id',(req,res)=>{
     const user = users.find((user)=> user.id===id);
     return res.json(user);
 })
+
 app.post('/api/users', (req, res) => {
     const body = req.body;
     users.push({ ...body, id: users.length + 1 });
@@ -40,7 +44,7 @@ app.post('/api/users', (req, res) => {
 });
 
 
-app.path('/api/users/:id',(req,res)=>{
+app.patch('/api/users/:id',(req,res)=>{
     // TODO edit user with id
     return  res.json({status:"pending"});
 })
