@@ -30,3 +30,4 @@ app.get('/contact',(req,res)=>{
 app.listen(port,()=>{
     console.log(`server is running on the http://localhost:${port}`);
 })
+
