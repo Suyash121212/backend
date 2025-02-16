@@ -70,7 +70,7 @@ app.post("/signup",(req,res)=>{
 
 // const portno = 8000;
 // myserver.listen(portno, (err, data) => {
-//     console.log(`server started on http://localhost:${portno}`);
+//     d on http://localhost:console.log(`server starte${portno}`);
 // })
 
 
