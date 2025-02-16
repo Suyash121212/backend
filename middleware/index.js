@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const port  = 8000;
 
-// middldeware 1 
+
+// middldeware 1                 
 app.use((req,res,next)=>{
     console.log('middleware 1');
     next(); //here next id passes the next middleware or route , if we dont pass
@@ -30,4 +31,5 @@ app.get('/contact',(req,res)=>{
 app.listen(port,()=>{
     console.log(`server is running on the http://localhost:${port}`);
 })
+
 
