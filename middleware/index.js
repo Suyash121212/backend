@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const port  = 8000;
 
+app.use(express.static('public')); // build in middleware to serve the static files
 
+ 
 // middldeware 1                 
 app.use((req,res,next)=>{
     console.log('middleware 1');
@@ -11,6 +13,8 @@ app.use((req,res,next)=>{
 })
 
 
+
+// middleware 2
 app.use((req,res,next)=>{
 console.log("middleware 2");
 next();
@@ -31,5 +35,4 @@ app.get('/contact',(req,res)=>{
 app.listen(port,()=>{
     console.log(`server is running on the http://localhost:${port}`);
 })
-
 
